@@ -18,3 +18,13 @@ const buscarCafe = (req, res) => {
     }
     res.json(cafe);
 }
+
+const deletarCafe = (req, res) => {
+    const cafeRemovido = listaCafes.deletarCafe(parseInt(req.params.id));
+    if(!cafeRemovido) {
+        return res.status(404).json({ erro: "Café não encontrado." });
+    }
+    res.json({ mensagem: "Café removido com sucesso." });
+}
+
+module.exports = { listarCafes, addCafe, buscarCafe, deletarCafe };
