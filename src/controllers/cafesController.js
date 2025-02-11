@@ -1,3 +1,5 @@
+const listaCafes = require("../models/listaCafes");
+
 const listarCafes = (req, res) => {
     res.json(listaCafes.listarCafes());
 }
